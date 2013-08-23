@@ -26,6 +26,8 @@ install -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
 if [ "$1" == "1" ]
 then
   %{_bindir}/%{name} 2>/dev/null
+  /usr/sbin/rmmod b43
+  /usr/sbin/modprobe b43
 fi
 
 %files
