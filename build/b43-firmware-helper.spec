@@ -1,10 +1,11 @@
-Name:     b43-firmware-helper
-Version:  5.100.138
-Release:  1%{?dist}
-Summary:  Broadcom Firmware installer
-License:  Proprietary
-Requires: b43-fwcutter wget
-Source0:  %{name}-%{version}.tar.gz
+Name:       b43-firmware-helper
+Version:    5.100.138
+Release:    1%{?dist}
+Summary:    Broadcom Firmware installer
+License:    Proprietary
+Requires:   b43-fwcutter wget
+Source0:    %{name}-%{version}.tar.gz
+BuildArch:  noarch
 
 %description
 This is a helper package to download, extract and install the
@@ -19,7 +20,7 @@ once Internet access is available.
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-install -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
+install -m 755 install_bcm43xx_firmware_5.100.138 %{buildroot}/%{_bindir}/%{name}
 
 %post
 # Run the script automatically on first install, but not upgrades
