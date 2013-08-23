@@ -14,6 +14,9 @@ Requires direct access to the Internet to work. If it fails due
 to lack of Internet access, you can yum reinstall this package
 once Internet access is available.
 
+%prep
+%setup -q
+
 %install
 mkdir -p %{buildroot}/%{_bindir}
 install -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
@@ -22,7 +25,7 @@ install -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
 # Run the script automatically on first install, but not upgrades
 if [ "$1" == "1" ]
 then
-  /%{_bindir}/%{name} 2>/dev/null
+  %{_bindir}/%{name} 2>/dev/null
 fi
 
 %files
