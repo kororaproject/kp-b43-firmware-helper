@@ -4,7 +4,7 @@ Release:  1%{?dist}
 Summary:  Broadcom Firmware installer
 License:  Proprietary
 Requires: b43-fwcutter wget
-Source0:  install_bcm43xx_firmware_5.100.138
+Source0:  %{name}-%{version}.tar.gz
 
 %description
 This is a helper package to download, extract and install the
